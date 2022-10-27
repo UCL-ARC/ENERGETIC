@@ -1,5 +1,4 @@
-HPL on myriad CPU
-=================
+# HPL on myriad CPU
 
 `hpl-2.3.tar.gz` was originally downloaded from https://netlib.org/benchmark/hpl/.
 
