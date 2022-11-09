@@ -11,7 +11,10 @@
 
 # Select the MPI parallel environment and number of cores
 # If you change this, remember to change the number of MPI processes below!
-#$ -pe mpi 16
+#
+# Set to 32 to reserve a whole node so energy measurements aren't affected
+# by what anyone else is doing.
+#$ -pe mpi 32
 
 # Set the name of the job.
 #$ -N HPL_tests
@@ -19,8 +22,8 @@
 # Only run on one type of node
 # See https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/#node-types for node documentation
 #
-# (currently commented out)
-# -ac allow=D
+# Currently set to any node that has Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+#$ -ac allow=BDEL
 
 # Set the working directory to somewhere in your scratch space.
 # This is a necessary step as compute nodes cannot write to $HOME.
@@ -48,7 +51,7 @@ $BASEDIR/sample_cpu.sh &
 RAPL_SAMPLE_PID=$!
 # echo $(date "+%Y-%m-%d %H:%M:%S %N") >> $CPU_POWER_OUTPUT_FILE
 # Run benchmark
-mpirun -np 16 "$(pwd)/xhpl"
+mpirun -np 32 "$(pwd)/xhpl"
 kill $RAPL_SAMPLE_PID
 
 # Move output file
