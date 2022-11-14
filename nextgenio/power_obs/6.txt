@@ -1,0 +1,35 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Platinum 8260M CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Runtime: 0.100844 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 3.80902 Joules
+Power consumed: 37.7714 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 0.425677 Joules
+Power consumed: 4.22114 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+
+Measure for socket 1 on CPU 24
+Domain PKG:
+Energy consumed: 3.44653 Joules
+Power consumed: 34.1769 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 0.416359 Joules
+Power consumed: 4.12874 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------

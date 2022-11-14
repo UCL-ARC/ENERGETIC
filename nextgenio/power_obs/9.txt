@@ -1,0 +1,3 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Platinum 8260M CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
