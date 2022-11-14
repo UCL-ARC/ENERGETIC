@@ -21,6 +21,5 @@ echo "Sampling power..."
 n=0
 while true; do
     likwid-powermeter -s $CADENCE >> "$CPU_POWER_OUTPUT_DIR/$n.txt"
-    sleep $CADENCE_SECS
     ((n++))
 done
