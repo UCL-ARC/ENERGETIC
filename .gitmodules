@@ -1,0 +1,3 @@
+[submodule "nextgenio/SGEMM/gemm_hls"]
+	path = nextgenio/SGEMM/gemm_hls
+	url = https://github.com/spcl/gemm_hls
