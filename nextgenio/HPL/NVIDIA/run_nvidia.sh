@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 POWER_CADENCE_MS=100
-GPU_POWER_FILE=gpu_power.csv
+GPU_POWER_FILE="gpu_power.csv"
+CPU_POWER_OUTPUT_DIR="./power_obs"
 
 rm $GPU_POWER_FILE
 
+# Start sampling GPU
 nvidia-smi --query-gpu=power.draw --format=csv --loop-ms=$POWER_CADENCE_MS --filename=$GPU_POWER_FILE &
 NVIDIA_SMI_PID=$!
+# Start sampling CPU
+../../sample_power.sh
+CPU_SAMPLE_PID=$!
 
 mpirun -n 4 \
     singularity run --nv \
@@ -18,3 +23,4 @@ mpirun -n 4 \
     --cpu-cores-per-rank 1
 
 kill $NVIDIA_SMI_PID
+kill $CPU_SAMPLE_PID
