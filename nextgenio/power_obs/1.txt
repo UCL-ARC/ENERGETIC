@@ -4,31 +4,31 @@ CPU type:	Intel Cascadelake SP processor
 CPU clock:	2.39 GHz
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-Runtime: 0.100979 s
+Runtime: 0.100841 s
 Measure for socket 0 on CPU 0
 Domain PKG:
-Energy consumed: 2.94214 Joules
-Power consumed: 29.136 Watt
+Energy consumed: 3.07544 Joules
+Power consumed: 30.4979 Watt
 Domain PP0:
 Energy consumed: 0 Joules
 Power consumed: 0 Watt
 Domain DRAM:
-Energy consumed: 0.426411 Joules
-Power consumed: 4.22276 Watt
+Energy consumed: 0.423795 Joules
+Power consumed: 4.2026 Watt
 Domain PLATFORM:
 Energy consumed: 0 Joules
 Power consumed: 0 Watt
 
 Measure for socket 1 on CPU 24
 Domain PKG:
-Energy consumed: 2.71997 Joules
-Power consumed: 26.9359 Watt
+Energy consumed: 2.68579 Joules
+Power consumed: 26.6339 Watt
 Domain PP0:
 Energy consumed: 0 Joules
 Power consumed: 0 Watt
 Domain DRAM:
-Energy consumed: 0.418562 Joules
-Power consumed: 4.14503 Watt
+Energy consumed: 0.413207 Joules
+Power consumed: 4.09761 Watt
 Domain PLATFORM:
 Energy consumed: 0 Joules
 Power consumed: 0 Watt
