@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 POWER_CADENCE_MS=100
 GPU_POWER_FILE="gpu_power.csv"
-CPU_POWER_OUTPUT_DIR="./power_obs"
+export CPU_POWER_OUTPUT_DIR="./power_obs"
 
 rm $GPU_POWER_FILE
 
