@@ -17,7 +17,7 @@ mkdir $CPU_POWER_OUTPUT_DIR
 echo "Cadence" >> "$CPU_POWER_OUTPUT_DIR/cadence.txt"
 echo $CADENCE >> "$CPU_POWER_OUTPUT_DIR/cadence.txt"
 
-echo "Sampling power..."
+echo "Sampling CPU power..."
 n=0
 while true; do
     likwid-powermeter -s $CADENCE >> "$CPU_POWER_OUTPUT_DIR/$n.txt"
