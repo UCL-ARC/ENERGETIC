@@ -11,7 +11,7 @@ nvidia-smi --query-gpu=power.draw --format=csv --loop-ms=$POWER_CADENCE_MS --fil
 NVIDIA_SMI_PID=$!
 
 # Start sampling CPU
-../../sample_power.sh &
+../../sample_cpu_power.sh &
 CPU_SAMPLE_PID=$!
 
 mpirun -n 4 \
