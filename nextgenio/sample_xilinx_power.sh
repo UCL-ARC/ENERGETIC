@@ -13,7 +13,7 @@ set -u
 # Sampling cadence in seconds
 CADENCE="0.1"
 # Current and voltage files
-COUNTER_DIR = "/sys/devices/pci0000:c0/0000:c0:01.1/0000:c3:00.1/xmc.u.19922944"
+COUNTER_DIR="/sys/devices/pci0000:c0/0000:c0:01.1/0000:c3:00.1/xmc.u.19922944"
 COUNTER_I="$COUNTER_DIR/xmc_12v_pex_curr"
 COUNTER_V="$COUNTER_DIR/xmc_12v_pex_vol"
 
