@@ -7,7 +7,8 @@
 set -u
 
 export XILINX_OUTPUT_FILE="xilinx_power.csv"
-MATRIX_SIZE="16"  # Must be a multiple of 16
+MATRIX_SIZE=4096  # Must be a multiple of 16
+
 
 # Start sampling FPGA
 echo "Starting Xilinx power sampling..."
@@ -15,7 +16,10 @@ echo "Starting Xilinx power sampling..."
 XILINX_POWER_PID=$!
 
 echo "Running GEMM benchmark..."
-SGEMM/gemm_hls/build/RunHardware.exe $MATRIX_SIZE $MATRIX_SIZE $MATRIX_SIZE hw
+
+cd gemm_hls/build
+./RunHardware.exe $MATRIX_SIZE $MATRIX_SIZE $MATRIX_SIZE hw
+cd ../..
 
 echo "Benchmark finished"
 echo "Stopping Xilinx power sampling"
