@@ -10,6 +10,7 @@
 set -u
 : "$XILINX_OUTPUT_FILE"
 
+rm $XILINX_OUTPUT_FILE
 # Sampling cadence in seconds
 CADENCE="0.1"
 # Current and voltage files
