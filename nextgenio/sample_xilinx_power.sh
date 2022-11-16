@@ -23,6 +23,8 @@ echo "Cadence = $CADENCE seconds" >> $XILINX_OUTPUT_FILE
 echo "Current, Voltage" >> $XILINX_OUTPUT_FILE
 
 while /bin/true; do
-    cat "$(cat $COUNTER_I), (CAT $COUNTER_V)" >> $XILINX_OUTPUT_FILE
+    I=$(cat $COUNTER_I)
+    V=$(cat $COUNTER_V)
+    cat "$I, $V" >> $XILINX_OUTPUT_FILE
     sleep $CADENCE
 done
