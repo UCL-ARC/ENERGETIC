@@ -21,11 +21,12 @@ COUNTER_V="$COUNTER_DIR/xmc_12v_pex_vol"
 
 echo "Sampling current and voltage from $COUNTER_DIR" >> $XILINX_OUTPUT_FILE
 echo "Cadence = $CADENCE seconds" >> $XILINX_OUTPUT_FILE
-echo "Current, Voltage" >> $XILINX_OUTPUT_FILE
+echo "Time, Current, Voltage" >> $XILINX_OUTPUT_FILE
 
 while /bin/true; do
     I=$(cat $COUNTER_I)
     V=$(cat $COUNTER_V)
-    echo "$I, $V" >> $XILINX_OUTPUT_FILE
+    TIME=$(date --iso-8601=ns)
+    echo "$TIME, $I, $V" >> $XILINX_OUTPUT_FILE
     sleep $CADENCE
 done
