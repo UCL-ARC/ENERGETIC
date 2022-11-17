@@ -18,7 +18,8 @@ XILINX_POWER_PID=$!
 echo "Running GEMM benchmark..."
 
 cd gemm_hls/build
-./RunHardware.exe $MATRIX_SIZE $MATRIX_SIZE $MATRIX_SIZE hw
+VERIFY="off"
+./RunHardware.exe $MATRIX_SIZE $MATRIX_SIZE $MATRIX_SIZE hw $VERIFY
 cd ../..
 
 echo "Benchmark finished"
