@@ -6,7 +6,7 @@ rm $GPU_POWER_FILE
 
 # Start sampling GPU
 echo "Sampling GPU power..."
-nvidia-smi --query-gpu=power.draw --format=csv --loop-ms=$POWER_CADENCE_MS --filename=$GPU_POWER_FILE &
+nvidia-smi --query-gpu=timestamp,power.draw --format=csv --loop-ms=$POWER_CADENCE_MS --filename=$GPU_POWER_FILE &
 NVIDIA_SMI_PID=$!
 
 mpirun -n 4 \
