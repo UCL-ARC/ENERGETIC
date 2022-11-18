@@ -34,11 +34,12 @@ BASEDIR="$HOME/ENERGETIC/myriad/GEMM/cpu"
 export CPU_POWER_OUTPUT_FILE="cpu_rapl_power_cadence_$JOB_ID.txt"
 COUNTER="/sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj"
 
-module load compilers/intel
+module load compilers/intel numactl
 
 # Copy HPL to temporary directory, and build
 cd $TMPDIR
-cp -r "$BASEDIR/*" .
+cp -r $BASEDIR .
+cd cpu
 make mkl
 
 # Run script to sample RAPL, and save PID so we can manually interrupt
@@ -47,7 +48,7 @@ make mkl
 RAPL_SAMPLE_PID=$!
 # echo $(date "+%Y-%m-%d %H:%M:%S %N") >> $CPU_POWER_OUTPUT_FILE
 # Run benchmark
-./run.sh 4 4096 mkl
+bash run.sh 4 4096 mkl
 kill $RAPL_SAMPLE_PID
 
 # Move output file
