@@ -43,7 +43,7 @@ NUMA="numactl -i all"
 export OMP_NUM_THREADS=${1}
 
 let cpu_m1=${OMP_NUM_THREADS}-1
-export KMP_AFFINITY="granularity=thread,proclist=[0-${cpu_m1}:1],explicit"
+export KMP_AFFINITY="granularity=thread,none"
 
 if [[ ${2} == "all" ]]
 then
@@ -59,13 +59,14 @@ then
 
   for size_n in ${SZ}
   do
+
 	${NUMA} ./sgemmbench.mkl  ${size_n}
   done
 
-  for size_n in ${SZ}
-  do
-	${NUMA} ./dgemmbench.mkl  ${size_n}
-  done
+#  for size_n in ${SZ}
+#  do
+#	${NUMA} ./dgemmbench.mkl  ${size_n}
+#  done
 
 elif [[ ${MATH_LIB} == "blis" && -f sgemmbench.blis && -f dgemmbench.blis ]]
 then
