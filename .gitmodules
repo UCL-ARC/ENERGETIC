@@ -1,3 +1,6 @@
 [submodule "nextgenio/SGEMM/gemm_hls"]
 	path = nextgenio/SGEMM/gemm_hls
 	url = https://github.com/spcl/gemm_hls
+[submodule "nextgenio/FFT/Vitis_Libraries"]
+	path = nextgenio/FFT/Vitis_Libraries
+	url = https://github.com/Xilinx/Vitis_Libraries
