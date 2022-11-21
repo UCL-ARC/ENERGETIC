@@ -4,3 +4,6 @@
 [submodule "nextgenio/FFT/Vitis_Libraries"]
 	path = nextgenio/FFT/Vitis_Libraries
 	url = https://github.com/Xilinx/Vitis_Libraries
+[submodule "nextgenio/STREAM/FPGA/HPCC_FPGA"]
+	path = nextgenio/STREAM/FPGA/HPCC_FPGA
+	url = https://github.com/pc2/HPCC_FPGA
