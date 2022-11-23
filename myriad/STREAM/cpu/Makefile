@@ -12,7 +12,7 @@ stream_f.exe: stream.f mysecond.o
 	$(FC) $(FFLAGS) stream.o mysecond.o -o stream_f.exe
 
 stream_c.exe: stream.c
-	$(CC) $(CFLAGS) stream.c -o stream_c.exe
+	$(CC) $(CFLAGS) stream.c -o stream_c.exe -fopenmp -mcmodel=medium -DSTREAM_ARRAY_SIZE=200000000
 
 clean:
 	rm -f stream_f.exe stream_c.exe *.o
