@@ -53,20 +53,22 @@ else
 fi
 
 MATH_LIB=${3}
+PRECISION=${4}
 
-if [[ ${MATH_LIB} == "mkl" && -f sgemmbench.mkl && -f dgemmbench.mkl ]]
+if [[ ${MATH_LIB} == "mkl" && ${PRECISION} == "single" ]]
 then
 
   for size_n in ${SZ}
   do
-
-	${NUMA} ./sgemmbench.mkl  ${size_n}
+    ${NUMA} ./sgemmbench.mkl  ${size_n}
   done
 
-#  for size_n in ${SZ}
-#  do
-#	${NUMA} ./dgemmbench.mkl  ${size_n}
-#  done
+elif [[ ${MATH_LIB} == "mkl" && ${PRECISION} == "double" ]]
+then
+  for size_n in ${SZ}
+  do
+    ${NUMA} ./dgemmbench.mkl  ${size_n}
+  done
 
 elif [[ ${MATH_LIB} == "blis" && -f sgemmbench.blis && -f dgemmbench.blis ]]
 then
@@ -86,4 +88,3 @@ else
 	echo "No valid library selected or present; Please, select 'mkl' or 'blis' and make sure you have run Makefile to build the selected library."
 
 fi
-
