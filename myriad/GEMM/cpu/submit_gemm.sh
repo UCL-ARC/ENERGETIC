@@ -12,7 +12,7 @@
 # Select the MPI parallel environment and number of cores
 # If you change this, remember to change the number of MPI processes below!
 #
-# Set to 32 to reserve a whole node so energy measurements aren't affected
+# Set to 36 to reserve a whole node so energy measurements aren't affected
 # by what anyone else is doing.
 #$ -pe mpi 4
 
@@ -48,7 +48,12 @@ make mkl
 RAPL_SAMPLE_PID=$!
 # echo $(date "+%Y-%m-%d %H:%M:%S %N") >> $CPU_POWER_OUTPUT_FILE
 # Run benchmark
-bash run.sh 4 4096 mkl
+
+MATH_LIB='mkl'
+MATRIX_RANK=4096
+N_THREADS=4
+
+bash run.sh $N_THREADS $MATRIX_RANK $MATH_LIB
 kill $RAPL_SAMPLE_PID
 
 # Move output file
